@@ -1,20 +1,24 @@
 // https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png
 
-const container = document.querySelector('#container');
-const baseImgURL =
-	'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/';
+const container = document.querySelector("#container");
+const baseImgURL = 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/';
 
-for (let i = 1; i <= 500; i++) {
-	const pokeBall = document.createElement('div');
-	pokeBall.classList.add('pokemon');
+for (let i = 1; i <= 100; i++) {
+    //container.append(`${i}, `);
 
-	const imgPokemon = document.createElement('img');
-	imgPokemon.src = `${baseImgURL}${i}.png`;
+    // menambahkan 100 elemen dengan class pokemon
+    const div = document.createElement('div');
+    div.classList.add('pokemon'); 
+    
+    // mengiterasi gambar pokemon
+    const imgPokemon = document.createElement('img');
+    imgPokemon.src = `${baseImgURL}${i}.png`;
 
-	const label = document.createElement('span');
-	label.innerText = `#${i}`;
+    //mengetahui gambar ke-i
+    const label = document.createElement('span');
+    label.append(`#${i}`);
 
-	pokeBall.appendChild(imgPokemon);
-	pokeBall.appendChild(label);
-	container.appendChild(pokeBall);
+    div.appendChild(imgPokemon);
+    div.appendChild(label);
+    container.appendChild(div);
 }
